@@ -32,8 +32,9 @@ export default {
 <style lang="scss">
 .hero {
   background-image: url(../assets/img/bg-hero.jpg);
-  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   padding: 40px;
 }

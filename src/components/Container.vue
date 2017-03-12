@@ -43,6 +43,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .container {
+  background-color: #fff;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 1);
   margin: 0 auto;
   max-width: 1200px;
