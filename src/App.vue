@@ -19,8 +19,9 @@ body {
 }
 
 #app {
+  background-attachment: fixed;
   background-image: url(assets/img/bg-page.jpg);
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px 20px;

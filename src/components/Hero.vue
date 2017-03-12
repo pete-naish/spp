@@ -4,6 +4,9 @@
     <navigation :navItems="navItems"></navigation>
     <h1 class="hero__title">{{title}}</h1>
     <h2 class="hero__subtitle">{{subtitle}}</h2>
+    <span class="hero__clip">
+      <!--<span class="hero__white"></span>-->
+    </span>
   </div>
 </template>
 
@@ -36,7 +39,9 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
+  overflow: hidden;
   padding: 40px;
+  position: relative;
 }
 
 .hero__title,
@@ -68,6 +73,24 @@ export default {
   &:hover {
     border-bottom-color: #fff;
     transition-duration: .1s;
+  }
+}
+
+.hero__clip {
+  bottom: 0;
+  height: 80px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  &:after {
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0) 63%, #fff 50%, #fff 50%);
+    bottom: 0;
+    content: '';
+    height: 310px;
+    left: -20%;
+    position: absolute;
+    width: 140%;
   }
 }
 </style>
