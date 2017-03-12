@@ -85,7 +85,7 @@ export default {
     background: radial-gradient(ellipse at center, transparent 63%, #fff 50%, #fff 50%);
     bottom: 0;
     content: '';
-    height: 310px;
+    height: 390%;
     left: -20%;
     position: absolute;
     width: 140%;
