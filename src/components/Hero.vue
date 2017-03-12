@@ -4,9 +4,7 @@
     <navigation :navItems="navItems"></navigation>
     <h1 class="hero__title">{{title}}</h1>
     <h2 class="hero__subtitle">{{subtitle}}</h2>
-    <span class="hero__clip">
-      <!--<span class="hero__white"></span>-->
-    </span>
+    <span class="hero__clip"></span>
   </div>
 </template>
 
@@ -84,7 +82,7 @@ export default {
   position: absolute;
   width: 100%;
   &:after {
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0) 63%, #fff 50%, #fff 50%);
+    background: radial-gradient(ellipse at center, transparent 63%, #fff 50%, #fff 50%);
     bottom: 0;
     content: '';
     height: 310px;
