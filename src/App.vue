@@ -14,6 +14,7 @@ export default {
 body {
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
+  font-size: 32px;
   margin: 0;
   padding: 0;
 }

@@ -25,7 +25,6 @@ export default {
 <style lang="scss">
 .nav-primary {
   float: right;
-  font-size: 32px;
 }
 
 .nav-primary__items {

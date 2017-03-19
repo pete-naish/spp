@@ -1,10 +1,10 @@
 <template>
   <div class="hero">
     <a class="hero__cta" :href="heroTelForHref">Call {{tel}}</a>
-    <navigation :navItems="navItems"></navigation>
+    <navigation :navItems="navItems" />
     <h1 class="hero__title">{{title}}</h1>
     <h2 class="hero__subtitle">{{subtitle}}</h2>
-    <span class="hero__clip"></span>
+    <span class="hero__clip" />
   </div>
 </template>
 
@@ -37,6 +37,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
+  margin-bottom: 40px;
   overflow: hidden;
   padding: 40px;
   position: relative;
@@ -65,7 +66,6 @@ export default {
 .hero__cta {
   border-bottom: 3px solid transparent;
   color: inherit;
-  font-size: 32px;
   text-decoration: none;
   transition: border .2s ease-out;
   &:hover {
