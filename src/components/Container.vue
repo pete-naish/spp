@@ -10,6 +10,7 @@
     <h1 class="h1" v-if="mainTitle">{{mainTitle}}</h1>
     <vue-markdown class="rte">{{firstRTEContent}}</vue-markdown>
     <testimonials :testimonials="testimonials" :image="testimonialImage" />
+    <vue-markdown class="rte">{{secondRTEContent}}</vue-markdown>
   </div>
 </template>
 
@@ -49,6 +50,7 @@ export default {
         },
       ],
       testimonialImage: '/static/img/bg-testimonials.eec1bdc.jpg',
+      secondRTEContent: 'Pilates is a series of slow controlled movements primarily to strengthen the core muscles that stabilise and support the spine, realign the body and correct postural problems.\n \n This is a line of text [with a link](https://pete.nai.sh "Title")',
     };
   },
   components: {
@@ -96,13 +98,13 @@ export default {
   }
   + .rte {
     overflow: hidden;
-    margin-left: 0;
+    margin: 0 120px 15px 0;
   }
 }
 
 .rte {
   color: #404040;
-  margin: 0 120px 15px;
+  margin: 40px;
   p {
     margin: 0 0 35px 0;
   }

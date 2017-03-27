@@ -31,5 +31,6 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 55px;
 }
 </style>
