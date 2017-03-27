@@ -5,15 +5,18 @@
       :subtitle="heroSubtitle"
       :tel="heroTel"
       :navItems="heroNavItems"
+      :image="heroImage"
       />
     <h1 class="h1" v-if="mainTitle">{{mainTitle}}</h1>
     <vue-markdown class="rte">{{firstRTEContent}}</vue-markdown>
+    <testimonials :testimonials="testimonials" :image="testimonialImage" />
   </div>
 </template>
 
 <script>
 import VueMarkdown from 'vue-markdown';
 import Hero from './Hero';
+import Testimonials from './Testimonials';
 
 export default {
   data() {
@@ -35,13 +38,23 @@ export default {
           anchor: 'contact',
         },
       ],
+      heroImage: '/static/img/bg-hero.eec1bdc.jpg',
       mainTitle: 'Why Pilates?',
       firstRTEContent: 'Pilates is a series of slow controlled movements primarily to strengthen the core muscles that stabilise and support the spine, realign the body and correct postural problems.\n \n This is a line of text [with a link](https://pete.nai.sh "Title")',
+      testimonials: [
+        {
+          id: '000',
+          text: 'I was very apprehensive before coming to Laura’s classes, feeling that I was older and less flexible than most of her clients.  Her quiet explanation of each set of exercises and gentle coaxing soon had me reassured, confident and looking forward to the next class - so thank you very, very much',
+          author: 'Lesley',
+        },
+      ],
+      testimonialImage: '/static/img/bg-testimonials.eec1bdc.jpg',
     };
   },
   components: {
     Hero,
     VueMarkdown,
+    Testimonials,
   },
 };
 </script>

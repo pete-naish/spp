@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div class="hero" :style="style">
     <a class="hero__cta" :href="heroTelForHref">Call {{tel}}</a>
     <navigation :navItems="navItems" />
     <h1 class="hero__title">{{title}}</h1>
@@ -17,6 +17,7 @@ export default {
     'subtitle',
     'tel',
     'navItems',
+    'image',
   ],
   components: {
     Navigation,
@@ -25,6 +26,11 @@ export default {
     heroTelForHref() {
       return `tel:${this.tel.replace(/\s/g, '')}`;
     },
+    style() {
+      return {
+        backgroundImage: `url(${this.image})`,
+      };
+    },
   },
 };
 </script>
@@ -32,7 +38,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .hero {
-  background-image: url(../assets/img/bg-hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
