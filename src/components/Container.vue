@@ -11,6 +11,8 @@
     <vue-markdown class="rte">{{firstRTEContent}}</vue-markdown>
     <testimonials :testimonials="testimonials" :image="testimonialImage" />
     <vue-markdown class="rte">{{secondRTEContent}}</vue-markdown>
+    <contact-form :image="contactImage" :title="contactTitle" :subtitle="contactSubtitle" />
+    <app-footer :copy="footerCopy" :images="footerImages" />
   </div>
 </template>
 
@@ -18,6 +20,8 @@
 import VueMarkdown from 'vue-markdown';
 import Hero from './Hero';
 import Testimonials from './Testimonials';
+import ContactForm from './Contact-form';
+import AppFooter from './App-footer';
 
 export default {
   data() {
@@ -39,7 +43,7 @@ export default {
           anchor: 'contact',
         },
       ],
-      heroImage: '/static/img/bg-hero.eec1bdc.jpg',
+      heroImage: '//i.imgur.com/5M9oA1h.jpg',
       mainTitle: 'Why Pilates?',
       firstRTEContent: 'Pilates is a series of slow controlled movements primarily to strengthen the core muscles that stabilise and support the spine, realign the body and correct postural problems.\n \n This is a line of text [with a link](https://pete.nai.sh "Title")',
       testimonials: [
@@ -47,16 +51,43 @@ export default {
           id: '000',
           text: 'I was very apprehensive before coming to Laura’s classes, feeling that I was older and less flexible than most of her clients.  Her quiet explanation of each set of exercises and gentle coaxing soon had me reassured, confident and looking forward to the next class - so thank you very, very much',
           author: 'Lesley',
+          show: false,
+        },
+        {
+          id: '001',
+          text: 'I hate cats',
+          author: 'Derek',
+          show: false,
         },
       ],
-      testimonialImage: '/static/img/bg-testimonials.eec1bdc.jpg',
+      testimonialImage: '//i.imgur.com/y3FVolo.jpg',
       secondRTEContent: 'Pilates is a series of slow controlled movements primarily to strengthen the core muscles that stabilise and support the spine, realign the body and correct postural problems.\n \n This is a line of text [with a link](https://pete.nai.sh "Title")',
+      contactImage: '//i.imgur.com/c8uwASw.jpg',
+      contactTitle: 'Get in touch',
+      contactSubtitle: 'Fancy coming to a taster class? Just drop me a message below',
+      footerCopy: '© 2017 Laura Jeffs',
+      footerImages: [
+        {
+          path: '//i.imgur.com/OpXFvXq.jpg',
+          link: '//google.co.uk',
+        },
+        {
+          path: '//i.imgur.com/2scTI3v.jpg',
+          link: '//google.co.uk',
+        },
+        {
+          path: '//i.imgur.com/78g8eGE.jpg',
+          link: '//google.co.uk',
+        },
+      ],
     };
   },
   components: {
     Hero,
     VueMarkdown,
     Testimonials,
+    ContactForm,
+    AppFooter,
   },
 };
 </script>
