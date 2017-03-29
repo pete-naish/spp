@@ -51,7 +51,7 @@ export default {
           id: '000',
           text: 'I was very apprehensive before coming to Laura’s classes, feeling that I was older and less flexible than most of her clients.  Her quiet explanation of each set of exercises and gentle coaxing soon had me reassured, confident and looking forward to the next class - so thank you very, very much',
           author: 'Lesley',
-          show: false,
+          show: true,
         },
         {
           id: '001',

@@ -1,5 +1,7 @@
 <template>
   <div class="testimonials" :style="style">
+    <button @click="prev">Prev</button>
+    <button @click="next">Next</button>
     <testimonial
       v-for="item in testimonials"
       :item="item"
@@ -25,11 +27,42 @@ export default {
         backgroundImage: `url(${this.image})`,
       };
     },
+    testimonialCount() {
+      return this.testimonials.length - 1;
+    },
+  },
+  data() {
+    return {
+      current: this.testimonials.findIndex(item => item.show),
+    };
   },
   mounted() {
     setTimeout(() => {
-      this.testimonials[0].show = true;
+      // console.log('this.testimonialCount', this.testimonialCount);
+      console.log(this.testimonials.findIndex(item => item.show));
     }, 1000);
+  },
+  methods: {
+    next() {
+      const next = this.testimonials[this.current + 1] || this.testimonials[0];
+
+      this.hideCurrent();
+
+      next.show = true;
+      this.current = next;
+    },
+    prev() {
+      const prev = this.testimonials[this.current - 1]
+        || this.testimonials[this.testimonialCount()];
+
+      this.hideCurrent();
+      prev.show = true;
+      this.current = prev;
+    },
+    hideCurrent() {
+      console.log(this.testimonials[this.current]);
+      this.testimonials[this.current].show = false;
+    },
   },
 };
 </script>
@@ -60,5 +93,9 @@ export default {
     content: '\201D';
     right: 25px;
   }
+}
+
+button {
+  float: right;
 }
 </style>
