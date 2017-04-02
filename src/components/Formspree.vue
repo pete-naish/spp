@@ -1,7 +1,7 @@
 <template>
   <form
     class="formspree"
-    action="https://formspree.io/simplypurepilates@yahoo.co.uk"
+    action="https://formspree.io/info@simplypurepilates.co.uk"
     method="POST"
   >
     <input required type="text" name="name" placeholder="Name">

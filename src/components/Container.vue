@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <hero
-      :title="heroTitle"
+      :title="test.companyName"
       :subtitle="heroSubtitle"
       :tel="heroTel"
       :navItems="heroNavItems"
@@ -18,14 +18,18 @@
 
 <script>
 import VueMarkdown from 'vue-markdown';
+import { map, mergeAll } from 'ramda';
 import Hero from './Hero';
 import Testimonials from './Testimonials';
 import ContactForm from './Contact-form';
 import AppFooter from './App-footer';
 
+const contentful = require('contentful');
+
 export default {
   data() {
     return {
+      test: null,
       heroTitle: 'Simply Pure Pilates',
       heroSubtitle: 'by Laura Jeffs',
       heroTel: '07710 408974',
@@ -81,6 +85,31 @@ export default {
         },
       ],
     };
+  },
+  created() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      const SPACE_ID = 'k84zdulq7a68';
+      const ACCESS_TOKEN = '993255b8db9dd89b8a683f9393a04a5f85ff3161a09a25a2b62b4fcfd1772c1b';
+
+      const client = contentful.createClient({
+        space: SPACE_ID,
+        accessToken: ACCESS_TOKEN,
+      });
+
+      // const entries = {
+      //   brand: '1vselJej2QWMMMEKQWYWw6',
+      //   hero: 'ID5JUX4auDRemSSWoYCquYa4',
+      // };
+
+      client
+        .getEntries()
+        .then(({ items }) => {
+          this.test = mergeAll(map(item => item.fields, items));
+        });
+    },
   },
   components: {
     Hero,
