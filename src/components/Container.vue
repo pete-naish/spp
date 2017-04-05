@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-if="test" class="container">
     <hero
       :title="test.companyName"
       :subtitle="heroSubtitle"
@@ -61,6 +61,12 @@ export default {
           id: '001',
           text: 'I hate cats',
           author: 'Derek',
+          show: false,
+        },
+        {
+          id: '002',
+          text: 'I love dogs',
+          author: 'Pete',
           show: false,
         },
       ],

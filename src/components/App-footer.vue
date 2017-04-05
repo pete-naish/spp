@@ -27,15 +27,14 @@ export default {
   padding: 20px 40px;
   &:before,
   &:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    display: table;
   }
 
   &:after {
     clear: both;
   }
 }
-
 
 .footer__copy {
   float: left;

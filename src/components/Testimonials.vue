@@ -33,14 +33,8 @@ export default {
   },
   data() {
     return {
-      current: this.testimonials.findIndex(item => item.show),
+      current: 0,
     };
-  },
-  mounted() {
-    setTimeout(() => {
-      // console.log('this.testimonialCount', this.testimonialCount);
-      console.log(this.testimonials.findIndex(item => item.show));
-    }, 1000);
   },
   methods: {
     next() {
@@ -49,7 +43,7 @@ export default {
       this.hideCurrent();
 
       next.show = true;
-      this.current = next;
+      this.current += 1;
     },
     prev() {
       const prev = this.testimonials[this.current - 1]
@@ -57,11 +51,11 @@ export default {
 
       this.hideCurrent();
       prev.show = true;
-      this.current = prev;
+      this.current -= 1;
     },
     hideCurrent() {
-      console.log(this.testimonials[this.current]);
-      this.testimonials[this.current].show = false;
+      const curr = this.testimonials[this.current] || this.testimonials[this.current - 1];
+      curr.show = false;
     },
   },
 };
