@@ -24,9 +24,18 @@ export default {
 .footer {
   color: #fff;
   background-color: #404040;
-  overflow: hidden;
   padding: 20px 40px;
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+
+  &:after {
+    clear: both;
+  }
 }
+
 
 .footer__copy {
   float: left;
